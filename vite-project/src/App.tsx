@@ -1,42 +1,24 @@
-import { useState } from 'react'
-/* import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-  const nomen = "Favour"
-  const isNomenShowing = true
-
-  return (
+function Person(Props) {
+  return(
     <>
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div> */}
-      <div>
-        {<h1>my name is {nomen}</h1> }
-        <h1>hello {isNomenShowing ? nomen : "something else"} </h1>
-        
-      </div>
-      {/* <h1>Vite + React</h1> */}
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  <h1>Name is {Props.Name}</h1>
+  <h2>My last name is {Props.lastName}</h2>
+  <h3>I am {Props.Age}</h3>
     </>
   )
 }
+
+function App() {
+  return (
+    <>
+    <div className="app">
+      <Person Name= 'Favour' lastName='mwe' Age='18 years'/>
+    </div>
+    </>
+  )
+}
+
 
 export default App
